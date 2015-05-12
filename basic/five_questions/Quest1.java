@@ -2,7 +2,6 @@ package five_questions;
 
 /**
  * 使用for循环、while循环和递归写出3个函数来计算给定数列的总和。
- *
  */
 public class Quest1 {
 	public static void main(String[] args) {
@@ -35,7 +34,7 @@ public class Quest1 {
 		int total = 0;
 		if(i==arrs.length-1)
 			return arrs[i];
-		return total +=  arrs[i]+recurSum(arrs,i++);
+		return total +=  arrs[i]+recurSum(arrs,++i);
 	}
 	
 }
