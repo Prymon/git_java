@@ -5,14 +5,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Map;
-
 import org.dom4j.DocumentException;
-
 import com.deamon.util.XMLUtil;
-import com.mysql.jdbc.DatabaseMetaData;
 
 public class Test {
 	public static void main(String[] args) {
+//		test1();
+		
+	}
+	
+	public void test1() {
 		try {
 			Map<String, String> confs = XMLUtil.getNodeContentMaps("mysql", "conf/config.xml");
 			String dbdriver = confs.get("dbdriver");
@@ -31,7 +33,6 @@ public class Test {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 }

@@ -1,9 +1,6 @@
 package com.deamon.main;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Properties;
-
-import javax.swing.SwingUtilities;
 
 public abstract class Main {
 

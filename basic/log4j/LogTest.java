@@ -1,7 +1,6 @@
 package log4j;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
