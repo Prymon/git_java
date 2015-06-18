@@ -1,12 +1,25 @@
-INFO - Logs2 info test,get info: wel logs 2
-DEBUG - This is debug message.
-INFO - This is info message.
-ERROR - This is error message.
-INFO - Logs2 info test,get info: wel logs 2
-DEBUG - This is debug message.
-INFO - This is info message.
-ERROR - This is error message.
-INFO - Logs2 info test,get info: wel logs 2
-DEBUG - This is debug message.
-INFO - This is info message.
-ERROR - This is error message.
+ERROR - Get Connection failedAccess denied for user 'hfrz'@'192.168.1.123' (using password: YES)
+ERROR - Get Connection failed : Access denied for user 'hfrz'@'192.168.1.123' (using password: YES)
+ERROR - Get Connection failed : Access denied for user 'hfrz'@'192.168.1.123' (using password: NO)
+ERROR - Get Connection failed : Access denied for user 'hfrz'@'192.168.1.123' (using password: NO)
+ERROR - Get Connection failed : Access denied for user 'hfrz'@'192.168.1.123' (using password: NO)
+ERROR - Get Connection failed : Access denied for user 'hfrz'@'192.168.1.123' (using password: NO)
+ERROR - Get Connection failed : Access denied for user 'hfrzmysql'@'192.168.1.123' (using password: NO)
+INFO - init 10connection scuess
+INFO - init 10connection scuess
+INFO - init 10connection scuess
+INFO - init 10connection scuess
+INFO - init 10connection scuess
+INFO - init 10connection scuess
+INFO - init 10connection scuess
+INFO - init 10connection scuess
+INFO - init 5connection scuess
+INFO - init 5connection scuess
+INFO - init 5connection scuess
+INFO - init 5connection scuess
+INFO - init 5connection scuess
+INFO - init 5connection scuess
+INFO - init 5connection scuess
+INFO - init 5connection scuess
+INFO - init 5connection scuess
+INFO - init 5connection scuess

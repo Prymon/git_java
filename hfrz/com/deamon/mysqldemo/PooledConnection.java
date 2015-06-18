@@ -1,4 +1,4 @@
-package com.deamon.mysql;
+package com.deamon.mysqldemo;
 
 import java.sql.Connection;
 

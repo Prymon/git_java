@@ -1,2 +1,8 @@
-2015-06-04 11:33:39  [ main:0 ] - [ ERROR ]  This is error message.
+2015-06-18 14:09:37  [ main:0 ] - [ ERROR ]  Get Connection failedAccess denied for user 'hfrz'@'192.168.1.123' (using password: YES)
+ 2015-06-18 14:10:30  [ main:0 ] - [ ERROR ]  Get Connection failed : Access denied for user 'hfrz'@'192.168.1.123' (using password: YES)
+ 2015-06-18 14:11:14  [ main:0 ] - [ ERROR ]  Get Connection failed : Access denied for user 'hfrz'@'192.168.1.123' (using password: NO)
+ 2015-06-18 14:12:23  [ main:0 ] - [ ERROR ]  Get Connection failed : Access denied for user 'hfrz'@'192.168.1.123' (using password: NO)
+ 2015-06-18 14:15:41  [ main:0 ] - [ ERROR ]  Get Connection failed : Access denied for user 'hfrz'@'192.168.1.123' (using password: NO)
+ 2015-06-18 14:15:56  [ main:0 ] - [ ERROR ]  Get Connection failed : Access denied for user 'hfrz'@'192.168.1.123' (using password: NO)
+ 2015-06-18 14:16:39  [ main:0 ] - [ ERROR ]  Get Connection failed : Access denied for user 'hfrzmysql'@'192.168.1.123' (using password: NO)
  

@@ -1,4 +1,4 @@
-package com.deamon.mysql;
+package com.deamon.mysqldemo;
 
 //
 //    一个效果非常不错的JAVA数据库连接池.

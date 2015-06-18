@@ -1,19 +1,27 @@
-package com.deamon.mysql;
+package com.deamon.mysqldemo;
 
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.Map;
+
 import org.dom4j.DocumentException;
+
 import com.deamon.util.XMLUtil;
 
 public class Test {
 	public static void main(String[] args) {
 //		test1();
-		
+		Map m = new HashMap<Integer, Integer>();
+		Integer x = (Integer) m.get(null);
+		System.out.println(x);
 	}
+
+
 	
+	@org.junit.Test
 	public void test1() {
 		try {
 			Map<String, String> confs = XMLUtil.getNodeContentMaps("mysql", "conf/config.xml");
@@ -35,4 +43,16 @@ public class Test {
 		}
 	}
 	
+	@org.junit.Test
+	public void test2() throws DocumentException, ClassNotFoundException, SQLException{
+		Map<String, String> confs = XMLUtil.getNodeContentMaps("mysql", "conf/config.xml");
+		String dbdriver = confs.get("dbdriver");
+		String user = confs.get("user");
+		String password = confs.get("password");
+		String url = confs.get("url");
+		Class.forName(dbdriver);
+		Connection conn_1 = DriverManager.getConnection(url, user, password);
+		Connection conn_2 = DriverManager.getConnection(url, user, password);
+		System.out.println(conn_1.hashCode()+"||"+conn_2.hashCode());
+	}
 }
