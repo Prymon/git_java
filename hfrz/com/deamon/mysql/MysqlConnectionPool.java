@@ -5,9 +5,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -18,20 +20,24 @@ import com.deamon.util.XMLUtil;
 
 /**
  * 连接池接口的mysql实现 mysql连接池
- * 
+ * 基于同步的ConcurrentHashMap的实现
+ * getConnectionFromPool()和ReturnConnection(Connection)使用了两个不同的同步锁
  * @author Deamon
  */
 public class MysqlConnectionPool implements ConnectionPool {
 
 	Logger logger = Logger.getLogger(MysqlConnectionPool.class);
 	public static final String DBDRIVER = "com.mysql.jdbc.Driver"; // mysql的驱动
+	public static final int ONRELEASETIMEINTERVAL = 2000; // 释放连接池等待连接关闭时间
 	private String url; // 连接url
 	private String user; // 数据库用户名
 	private String passwd; // 数据库密码
 	private int numOfConnection; // 连接池中连接数量
 	private int maxNumOfConnection = 100; // 连接池最大连接数量
+	private int maxBlockedTime = 20000; // 获取连接最大等待时间
+	private int singleWaitSec = 200; // 获取连接单次等待时间
+
 	private Map<Connection, Integer> connMap; // <连接,连接状态>。-1为异常状态、0为已连接未使用、1为已连接正使用
-	private String string;
 
 	public MysqlConnectionPool() {
 	}
@@ -58,6 +64,7 @@ public class MysqlConnectionPool implements ConnectionPool {
 					+ "failed : " + e.getMessage());
 			return false;
 		}
+		logger.info("start query max num of connection");
 		try {
 			// 修正数据库最大连接数
 			int maxNumOfConnection = DriverManager
@@ -68,7 +75,9 @@ public class MysqlConnectionPool implements ConnectionPool {
 				this.maxNumOfConnection = maxNumOfConnection;
 			System.out.println("max num correct scuess");
 			// 初始化连接池
-			connMap = new HashMap<Connection, Integer>();
+			//创建一个同步的ConcurrentHashMap
+//			connMap = Collections.synchronizedMap(new HashMap<Connection, Integer>());	//方案1
+			connMap = new ConcurrentHashMap<Connection, Integer>();
 			for (int i = 0; i < numOfConnection; i++) {
 				Connection conn = DriverManager
 						.getConnection(url, user, passwd);
@@ -88,24 +97,31 @@ public class MysqlConnectionPool implements ConnectionPool {
 	public synchronized Connection getConnectionFromPool() {
 		if (connMap == null)
 			return null;
-		for (Entry<Connection, Integer> connEntry : connMap.entrySet()) {
-			if (connEntry.getValue() == 0) {
-				connEntry.setValue(1);
-				return connEntry.getKey();
-			}
+		Connection freeConn = getFreeConnection();
+		int connGetTimeInterval = 0;
+		while (freeConn == null && connGetTimeInterval < maxBlockedTime) {
+			waitMiles(singleWaitSec);
+			connGetTimeInterval += singleWaitSec;
+			freeConn = getFreeConnection();
+			System.out.println("beening waiting for " + connGetTimeInterval
+					+ "miles");
 		}
-		return null;
+		return freeConn == null ? null : freeConn;
 	}
 
 	@Override
-	public synchronized boolean ReturnConnection(Connection conn) {
-		if (connMap == null)
+	public boolean ReturnConnection(Connection conn) {
+		synchronized(MysqlConnectionPool.class){
+		System.out.println("开始返回");
+			if (connMap == null)
+				return false;
+			if (connMap.get(conn) != null) {
+				connMap.put(conn, 0);
+				return true;
+			}
 			return false;
-		if (connMap.get(conn) != null) {
-			connMap.put(conn, 0);
-			return true;
 		}
-		return false;
+
 	}
 
 	@Override
@@ -113,15 +129,17 @@ public class MysqlConnectionPool implements ConnectionPool {
 		if (connMap == null)
 			return false;
 		for (Entry<Connection, Integer> connEntry : connMap.entrySet()) {
-			if (connEntry.getValue() == 1) // 连接还在占用，等待5s
-				waitSecond(5);
+			if (connEntry.getValue() == 1) // 连接还在占用，等待2s
+				waitMiles(ONRELEASETIMEINTERVAL);
 			try {
 				connEntry.getKey().close();
+				// connMap.remove(connEntry.getKey());
 			} catch (SQLException e) {
 				logger.error(" 关闭数据库连接出错： " + e.getMessage());
 				return false;
 			}
 		}
+		connMap = null;
 		return true;
 	}
 
@@ -133,13 +151,55 @@ public class MysqlConnectionPool implements ConnectionPool {
 		return maxNumOfConnection;
 	}
 
-	private void waitSecond(int second) {
+	public int getMaxBlockedTime() {
+		return maxBlockedTime;
+	}
+
+	/**
+	 * 设置获取连接最大等待时间（ms）,设置为-1则为无限制
+	 * 
+	 * @param maxBlockedTime
+	 */
+	public void setMaxBlockedTime(int maxBlockedTime) {
+		this.maxBlockedTime = maxBlockedTime < 0 ? -1 : maxBlockedTime;
+	}
+
+	public int getSingleWaitSec() {
+		return singleWaitSec;
+	}
+
+	/**
+	 * 设置获取连接时，单次等待时间（ms） 范围[10,10000],参数溢出则保持不变
+	 * 
+	 * @param singleWaitSec
+	 */
+	public void setSingleWaitSec(int singleWaitSec) {
+		this.singleWaitSec = (singleWaitSec >= 10 && singleWaitSec <= 10000) ? singleWaitSec
+				: this.singleWaitSec;
+	}
+
+	private void waitMiles(int miles) {
 		try {
-			Thread.sleep(second * 1000);
+			Thread.sleep(miles);
 		} catch (InterruptedException e) {
 			logger.error("wait for connection close error");
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * 获得空闲的连接。若无返回null
+	 * 
+	 * @return
+	 */
+	private Connection getFreeConnection() {
+		for (Entry<Connection, Integer> connEntry : connMap.entrySet()) {
+			if (connEntry.getValue() == 0) {
+				connEntry.setValue(1);
+				return connEntry.getKey();
+			}
+		}
+		return null;
 	}
 
 	@Test
@@ -153,9 +213,11 @@ public class MysqlConnectionPool implements ConnectionPool {
 		String url = confs.get("url");
 		System.out.println(url);
 		final MysqlConnectionPool pool = new MysqlConnectionPool();
-		pool.init(5,url, user, password);
+		pool.setMaxBlockedTime(8000);
+		pool.setSingleWaitSec(20);
+		pool.init(5, url, user, password);
 
-		for(int i=0;i<10;i++){
+		for (int i = 0; i < 20; i++) {
 			new Thread(new Runnable() {
 				@Override
 				public void run() {
@@ -164,20 +226,30 @@ public class MysqlConnectionPool implements ConnectionPool {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					if(null != pool.getConnectionFromPool()){
+					Connection conn =pool.getConnectionFromPool();
+					if (null == conn) {
 						System.out.println("得不到连接");
+					} else {
+						System.out.println("得到连接");
 					}
+//					waitMiles(2000);
+					System.out.println("return"+pool.ReturnConnection(conn));
 				}
 			}).start();
 		}
-		System.out.println("尝试释放");
-		System.out.println(pool.releaseConnectionPool());
 		try {
 			Thread.sleep(50000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		/*Connection conn = pool.getConnectionFromPool();
+		/*
+		System.out.println("尝试释放");
+		if (pool.releaseConnectionPool()) {
+			System.out.println("释放完成");
+		}
+		System.out.println(pool.init(5, url, user, password)?"init scuess":"failed");
+
+		Connection conn = pool.getConnectionFromPool();
 		Statement state = conn.createStatement();
 		ResultSet res = state.executeQuery("select * from carvin limit 10");
 		while (res.next()) {

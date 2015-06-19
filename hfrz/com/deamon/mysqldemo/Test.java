@@ -13,11 +13,9 @@ import com.deamon.util.XMLUtil;
 
 public class Test {
 	public static void main(String[] args) {
-//		test1();
-		Map m = new HashMap<Integer, Integer>();
-		Integer x = (Integer) m.get(null);
-		System.out.println(x);
+
 	}
+	
 
 
 	
