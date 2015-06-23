@@ -1,4 +1,4 @@
-package com.deamon.mysql;
+package com.intedio.business.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
