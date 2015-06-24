@@ -1,19 +1,32 @@
 package com.deamon.mysqldemo;
 
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
+import javax.sql.DataSource;
+
+import org.apache.commons.dbcp.BasicDataSourceFactory;
 import org.dom4j.DocumentException;
 
 import com.deamon.util.XMLUtil;
 
 public class Test {
-	public static void main(String[] args) {
-
+	private static DataSource ds = null;
+	
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		Properties prop = new Properties();
+		prop.load(new FileReader(XMLUtil.getUserPath("conf/dbcpconfig.properties")));
+//		ds = new BasicDataSourceFactory().;
+		
+		
 	}
 	
 

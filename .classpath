@@ -10,5 +10,7 @@
 	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.35.jar" sourcepath="C:/Users/Deamon/.m2/repository/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35-sources.jar"/>
 	<classpathentry kind="lib" path="lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/commons-dbcp-20030825.184428.jar"/>
+	<classpathentry kind="lib" path="lib/commons-pool-20030825.183949.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
