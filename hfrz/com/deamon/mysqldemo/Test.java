@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 import org.apache.commons.dbcp.BasicDataSourceFactory;
 import org.dom4j.DocumentException;
 
-import com.deamon.util.XMLUtil;
+import com.vinana.util.XMLUtil;
 
 public class Test {
 	private static DataSource ds = null;

@@ -19,7 +19,8 @@ import org.apache.log4j.PropertyConfigurator;
 import org.dom4j.DocumentException;
 import org.junit.Test;
 
-import com.deamon.util.XMLUtil;
+import com.vinana.mysql.ConnectionPool;
+import com.vinana.util.XMLUtil;
 
 /**
  * 连接池接口的mysql实现 mysql连接池
