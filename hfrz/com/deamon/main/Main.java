@@ -1,34 +1,26 @@
 package com.deamon.main;
 
-import java.io.UnsupportedEncodingException;
+public class Main {
 
-public abstract class Main {
-
-	public abstract void s();
-
-	public static void main(String[] args) throws UnsupportedEncodingException {
-		pri(new test() {
-
-			@Override
-			public void a() {
-				// TODO Auto-generated method stub
-				System.out.println("ss");
-			}
-
-			@Override
-			public String toString() {
-				return "to str";
-			}
-
-		});
+	public static void main(String[] args) {
+		parseArgs(args);
 	}
-
-	private static void pri(test t) {
-		System.out.println(t.toString());
+	
+	/**
+	 * 解析 启动参数
+	 * @param args
+	 */
+	private static void parseArgs(String[] args){
+		for (int i = 0; i < args.length; i++) {
+			switch (args[i]) {
+			case "-c":
+				//to do
+				System.out.println("run config -c");
+				break;
+			default:
+				//to do
+				break;
+			}
+		}
 	}
-}
-
-interface test {
-	void a();
-
 }

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -16,6 +17,8 @@ import org.dom4j.io.SAXReader;
  */
 public class XMLUtil {
 	
+//	private Logger logger = Logger.getLogger(XMLUtil.class);
+	
 	/**
 	 * 私有化构造方法
 	 */
@@ -23,7 +26,7 @@ public class XMLUtil {
 	
 	public static void main(String[] args) {
 		try {
-			String path = getUserPath("/conf/config.xml");
+			String path = getUserPath("/conf/config.xml1");
 			Map<String, String> nodes = getNodeContentMaps("runtime", path);
 			System.out.println(nodes);
 		} catch (DocumentException e) {

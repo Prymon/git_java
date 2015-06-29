@@ -1,4 +1,4 @@
-package com.intedio.business.mysql;
+package com.intedio.business.mysql.drop;
 
 import java.sql.Connection;
 

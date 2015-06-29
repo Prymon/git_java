@@ -40,7 +40,7 @@ public final class MysqlConnectionPool implements ConnectionPool {
 
 	private Map<Connection, Integer> connMap; // <连接,连接状态>。-1为异常状态、0为已连接未使用、1为已连接正使用
 
-	public MysqlConnectionPool() {
+	protected MysqlConnectionPool() {
 	}
 
 	@Override

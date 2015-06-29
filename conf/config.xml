@@ -11,5 +11,6 @@
 	</mysql>
 	<runtime>
 		<res1>test</res1>
+		<res2>once</res2>
 	</runtime>
 </root>
