@@ -8,8 +8,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
@@ -19,8 +17,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.dom4j.DocumentException;
 import org.junit.Test;
 
-import com.vinana.mysql.ConnectionPool;
-import com.vinana.util.XMLUtil;
+import com.deamon.util.XMLUtil;
 
 /**
  * 连接池接口的mysql实现 mysql连接池
