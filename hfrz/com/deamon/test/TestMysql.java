@@ -9,8 +9,8 @@ import java.util.Random;
 import org.apache.log4j.PropertyConfigurator;
 import org.dom4j.DocumentException;
 
-import com.deamon.mysql.MysqlConnectionPool;
 import com.deamon.util.XMLUtil;
+import com.intedio.test.mysql.MysqlConnectionPool;
 
 
 public class TestMysql {

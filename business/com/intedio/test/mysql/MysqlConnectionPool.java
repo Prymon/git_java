@@ -1,8 +1,13 @@
-package com.intedio.business.mysql.drop;
+package com.intedio.test.mysql;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
@@ -12,6 +17,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.dom4j.DocumentException;
 import org.junit.Test;
 
+import com.deamon.mysql.ConnectionPool;
 import com.deamon.util.XMLUtil;
 
 /**
@@ -20,7 +26,7 @@ import com.deamon.util.XMLUtil;
  * getConnectionFromPool()和ReturnConnection(Connection)使用了两个不同的同步锁
  * @author Deamon
  */
-public class MysqlConnectionPool implements ConnectionPool{
+public final class MysqlConnectionPool implements ConnectionPool{
 
 	Logger logger = Logger.getLogger(MysqlConnectionPool.class);
 	public static final String DBDRIVER = "com.mysql.jdbc.Driver"; // mysql的驱动
@@ -102,13 +108,14 @@ public class MysqlConnectionPool implements ConnectionPool{
 			System.out.println("beening waiting for " + connGetTimeInterval
 					+ "miles");
 		}
-		return freeConn == null ? null : freeConn;
+		if(freeConn!=null)
+			freeConn = (Connection) Proxy.newProxyInstance(Connection.class.getClassLoader(), new Class[]{Connection.class}, new ProxyConn(freeConn));
+		return freeConn;
 	}
 
 	@Override
 	public boolean ReturnConnection(Connection conn) {
 		synchronized(MysqlConnectionPool.class){
-		System.out.println("开始返回");
 			if (connMap == null)
 				return false;
 			if (connMap.get(conn) != null) {
@@ -234,11 +241,11 @@ public class MysqlConnectionPool implements ConnectionPool{
 			}).start();
 		}
 		try {
-			Thread.sleep(50000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		/*
+		
 		System.out.println("尝试释放");
 		if (pool.releaseConnectionPool()) {
 			System.out.println("释放完成");
@@ -247,14 +254,60 @@ public class MysqlConnectionPool implements ConnectionPool{
 
 		Connection conn = pool.getConnectionFromPool();
 		Statement state = conn.createStatement();
-		ResultSet res = state.executeQuery("select * from carvin limit 10");
+		ResultSet res = state.executeQuery("select * from carvin limit 100");
 		while (res.next()) {
 			int count = res.getMetaData().getColumnCount();
 			for (int i = 1; i <= count; i++)
 				System.out.print(res.getString(i) + "--");
 			System.out.println();
-		}*/
-
+		}
+		res.last();
+		System.out.println(res.getRow());
+		conn.close();
 	}
-
+	
+	//测试connection的关闭，和pool的关闭对于资源的释放
+	@Test
+	public void test2() throws DocumentException, SQLException{
+		PropertyConfigurator.configure("conf/log4j.properties");
+		Map<String, String> confs = XMLUtil.getNodeContentMaps("mysql",
+				"conf/config.xml");
+		String dbdriver = confs.get("dbdriver");
+		String user = confs.get("user");
+		String password = confs.get("password");
+		String url = confs.get("url");
+		System.out.println(url);
+		final MysqlConnectionPool pool = new MysqlConnectionPool();
+		pool.setMaxBlockedTime(8000);
+		pool.setSingleWaitSec(20);
+		pool.init(5, url, user, password);
+		Connection conn1 = pool.getConnectionFromPool();
+		conn1.close();
+		System.out.println("conn close: "+conn1.isClosed());
+		pool.releaseConnectionPool();
+		System.out.println("conn close: "+conn1.isClosed());
+		
+	}
+	/**
+	 * 动态代理Handler内部类
+	 * 处理connection的close()请求 
+	 * @author Deamon
+	 */
+	class ProxyConn implements InvocationHandler{
+		Object proxyObj;
+		
+		public ProxyConn(Object proxyObj){
+			this.proxyObj = proxyObj;
+		}
+		
+		@Override
+		public Object invoke(Object proxy, Method method, Object[] args)
+				throws Throwable {
+			if(method.getName().equals("close")){
+				ReturnConnection((Connection) this.proxyObj);
+				return null;
+			}
+			return method.invoke(this.proxyObj, args);
+		}
+	}
 }

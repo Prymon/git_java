@@ -18,6 +18,7 @@ import org.dom4j.DocumentException;
 import org.junit.Test;
 
 import com.deamon.util.XMLUtil;
+import com.intedio.test.mysql.ConnectionPool;
 
 /**
  * 连接池接口的mysql实现 mysql连接池
