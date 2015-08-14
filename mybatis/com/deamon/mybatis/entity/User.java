@@ -1,4 +1,4 @@
-package com.deamon.mybatis.pojo;
+package com.deamon.mybatis.entity;
 
 public class User {
 	private String id;

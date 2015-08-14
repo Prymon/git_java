@@ -19,14 +19,14 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.PropertyConfigurator;
 
-import com.deamon.mybatis.pojo.User;
+import com.deamon.mybatis.dao.UserDao;
+import com.deamon.mybatis.entity.User;
 
 public class Demo {
 	public static void main(String[] args) {
 		try {
 			init();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -37,9 +37,15 @@ public class Demo {
 		Reader reader = Resources.getResourceAsReader(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		SqlSession session = sqlSessionFactory.openSession();
+
+		/* 得到一个结果 */
+		UserDao mapper = session.getMapper(UserDao.class);
+		System.out.println(mapper.getUserById("admin").getGender());
 		
-		session.getConfiguration().addMapper(UserMapper.class);
-		UserMapper mapper = session.getMapper(UserMapper.class);
-		System.out.println(mapper.findById("admin"));
+		/* 得到结果集合 */
+		List<User> userList = mapper.getAllUser();
+		for(User temp : userList){
+			System.out.println(temp.getId()+" "+temp.getName()+"  "+temp.getGender());
+		}
 	}
 }
