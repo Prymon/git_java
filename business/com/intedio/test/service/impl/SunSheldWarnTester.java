@@ -1,14 +1,22 @@
 package com.intedio.test.service.impl;
 
+import java.io.IOException;
+import java.util.Map;
+
+import org.junit.Test;
+
+import com.intedio.test.pojo.BusinessModel;
 import com.intedio.test.service.Tester;
+import com.intedio.test.util.OPERATION;
+import com.intedio.test.util.SocketClient;
 
 /**
- * ÕÚÑô°å²âÊÔ¹¤¾ß
+ * é®é˜³æ¿æµ‹è¯•å·¥å…·
  * @author dimen
- * ²âÊÔÓÃÀı£º
- * ÕÚÑô°åÊıÁ¿£º0	¿ÉĞÅ¶È£º10	¿ìÕÕÊ±¼ä£º£¨ÔİÊ±¹Ø±Õ£©	½á¹û£º²»±¨¾¯
- * ÕÚÑô°åÊıÁ¿£º1	¿ÉĞÅ¶È£º10	¿ìÕÕÊ±¼ä£º£¨ÔİÊ±¹Ø±Õ£© ½á¹û£º±¨¾¯
- * ÕÚÑô°åÊıÁ¿£º-1	¿ÉĞÅ¶È£º10	¿ìÕÕÊ±¼ä£º£¨ÔİÊ±¹Ø±Õ£© ½á¹û£º²»±¨¾¯
+ * æµ‹è¯•ç”¨ä¾‹ï¼š
+ * ã€1ã€‘é®é˜³æ¿æ•°é‡ï¼š0	å¯ä¿¡åº¦ï¼š10	å¿«ç…§æ—¶é—´ï¼šï¼ˆæš‚æ—¶å…³é—­ï¼‰	ç»“æœï¼šä¸æŠ¥è­¦
+ * ã€2ã€‘é®é˜³æ¿æ•°é‡ï¼š1	å¯ä¿¡åº¦ï¼š10	å¿«ç…§æ—¶é—´ï¼šï¼ˆæš‚æ—¶å…³é—­ï¼‰ ç»“æœï¼šæŠ¥è­¦
+ * ã€3ã€‘é®é˜³æ¿æ•°é‡ï¼š-1	å¯ä¿¡åº¦ï¼š10	å¿«ç…§æ—¶é—´ï¼šï¼ˆæš‚æ—¶å…³é—­ï¼‰ ç»“æœï¼šä¸æŠ¥è­¦
  * 
  */
 public class SunSheldWarnTester implements Tester {
@@ -19,16 +27,59 @@ public class SunSheldWarnTester implements Tester {
 		return true;
 	}
 	
-	public boolean test1(){
-		
-		
-		return false;
+	/**
+	 * é®é˜³æ¿
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
+	public static void test1() throws IOException, InterruptedException{
+		SocketClient client = new SocketClient("127.0.0.1", 9888);
+		Map<String, Object> map = BusinessModel.getInstance(OPERATION.intesv).
+				setSunNum("2").
+				setSunScore("100").
+				setSnapShotTime(System.currentTimeMillis()+"").getMap();
+		client.sendSocketData(map);
+		client.start();
+//		client.receiveSocket();
 	}
 	
+	/**
+	 * ä¸€ç‰Œå¤šè½¦
+	 * @param args
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
+	public static void test2() throws IOException, InterruptedException{
+		SocketClient client = new SocketClient("127.0.0.1", 9888);
+		Map<String, Object> map = BusinessModel.getInstance(OPERATION.intesv).
+				setCarPlateNumber("é„‚s011123").setCarPlateNumber2("é„‚s011123").
+				setSF_CarFamily("-13").
+				setSnapShotTime(System.currentTimeMillis()+"").getMap();
+		client.sendSocketData(map);
+		client.start();
+//		client.receiveSocket();
+	}
 	
+	/**
+	 * å‡å¥—ç‰Œ
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
+	public static void test3() throws IOException, InterruptedException{
+		SocketClient client = new SocketClient("127.0.0.1", 9888);
+		Map<String, Object> map = BusinessModel.getInstance(OPERATION.intesv).
+				setSF_CarFamily("-90").setSF_CarBrand("10").
+				setCarPlateNumber("è’™G14984556").setCarPlateNumber2("è’™G14984556").
+				setSnapShotTime(System.currentTimeMillis()+"").getMap();
+		client.sendSocketData(map);
+		client.start();
+//		client.receiveSocket();
+	}
 	
-	public static void main(String[] args) {
-
+	public static void main(String[] args) throws IOException, InterruptedException {
+//		test1();
+//		test2();
+		test3();
 	}
 
 }

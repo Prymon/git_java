@@ -2,12 +2,13 @@ package com.intedio.test.pojo;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import com.intedio.test.util.OPERATION;
 
 public class BusinessModel {
 
-	/* Ò»¼¶×Ö¶Î */
+	/* ä¸€çº§å­—æ®µ */
 	private String carId = "";
 	private String type = "business";
 	private String operation = OPERATION.intesv.toString();
@@ -18,26 +19,32 @@ public class BusinessModel {
 	/* basicMap */
 	private String CarPlateType = "2";
 	private String CarPlateType2 = "2";
-	private String CarPlateNumber = "ÃÉG56939";
-	private String CarPlateNumber2 = "ÃÉG56939";
-	private String SF_CarStyleCode = "01F216A5BF0E411394E1791950327210"; // jeep-ÄÁÂíÈË-20082014
+	private String CarPlateNumber = "è’™G56939";
+	private String CarPlateNumber2 = "è’™G56939";
+	private String SF_CarStyleCode = "01F216A5BF0E411394E1791950327210"; // jeep-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-20082014
 	private String SF_CarBrand = "6";
-	private String SF_CarKindCode = "1"; // Ö»ÓĞ»ü²é²¼¿ØÓÃ
+	private String SF_CarKindCode = "1"; 
 	private String SF_CarPattern = "1";
 	private String SF_CarFamily = "-59";
-	private String SF_CarColorCode = "10"; // Ö»ÓĞ»ü²é²¼¿ØÓÃ
+	private String SF_CarColorCode = "10"; 
 	private String sunNum = "0";
-	private String tagNum = "0"; // Î´Ê¹ÓÃ
-	private String dropNum = "0"; // Î´Ê¹ÓÃ
-	private String paperNum = "0"; // Î´Ê¹ÓÃ
+	private String tagNum = "0"; // é®é˜³æ¿
+	private String dropNum = "0"; // é®é˜³æ¿
+	private String paperNum = "0"; // é®é˜³æ¿
 	private String sunScore = "100";
 	private String TollgateDeviceId = "00004";
 	private String SnapShotTime = "1434511790500";
 
 	private static BusinessModel model;
 
+	/**
+	 * æ„é€ æ–¹æ³•
+	 * @param operation
+	 */
 	private BusinessModel(OPERATION operation) {
 		setOperation(this.operation.toString());
+		carId = "11111111"+((int)(Math.random()*100000)+100000);
+		Score = "95";
 	}
 	
 	/**
@@ -49,7 +56,7 @@ public class BusinessModel {
 	}
 
 	/**
-	 * ½«model×ª³Émap
+	 * ï¿½ï¿½model×ªï¿½ï¿½map
 	 * 
 	 * @return
 	 */
@@ -61,21 +68,21 @@ public class BusinessModel {
 		Map<String, Object> RunRes = new HashMap<String, Object>();
 		/** detail */
 		maps_detail.put("Score", model.getScore());
-		maps_detail.put("CarBodyBox", ""); // ÆúÓÃ
-		maps_detail.put("CarFaceBox", ""); // ÆúÓÃ
+		maps_detail.put("CarBodyBox", ""); // ï¿½ï¿½ï¿½ï¿½
+		maps_detail.put("CarFaceBox", ""); // ï¿½ï¿½ï¿½ï¿½
 		/** basic */
-		maps_basic.put("sunNum", model.getSunNum()); // ÕÚÑô°å±¨¾¯ÔòÈÃ´ËÖµÎª1
+		maps_basic.put("sunNum", model.getSunNum()); // ï¿½ï¿½ï¿½ï¿½ï¿½å±¨ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ÖµÎª1
 		maps_basic.put("dropNum", model.getDropNum());
 		maps_basic.put("tagNum", model.getTagNum());
 		maps_basic.put("paperNum", model.getPaperNum());
 		maps_basic.put("sunScore", model.getSunScore());
-		// Ò»ÅÆ¶à³µ£¬¼ÙÌ×ÅÆ£¬¹ıÂËµÈ
+		// Ò»ï¿½Æ¶à³µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½Ëµï¿½
 		maps_basic.put("CarPlateNumber", model.getCarPlateNumber());
 		maps_basic.put("CarPlateNumber2", model.getCarPlateNumber2());
-		maps_basic.put("SF_CarColorCode", model.getSF_CarColorCode()); // ·¶Î§0-9,Êı¾İ¿âÒÑ¾­ÓĞ10ÕâÌõ£¬0-9¼´Îª²»Í¬µÄ³µ
+		maps_basic.put("SF_CarColorCode", model.getSF_CarColorCode()); // ï¿½ï¿½Î§0-9,ï¿½ï¿½İ¿ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½10ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0-9ï¿½ï¿½Îªï¿½ï¿½Í¬ï¿½Ä³ï¿½
 		maps_basic.put("SF_CarKindCode", model.getSF_CarKindCode());
 		maps_basic.put("SF_CarFamily", model.getSF_CarFamily());
-		// ÆäËûĞÅÏ¢
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 		maps_basic.put("TollgateDeviceId", model.getTollgateDeviceId());
 		maps_basic.put("CarPlateType", model.getCarPlateType());
 		maps_basic.put("CarPlateType2", model.getCarPlateType2());
@@ -105,7 +112,7 @@ public class BusinessModel {
 	}
 
 	/**
-	 * »ñÈ¡ÊµÀı
+	 * ï¿½ï¿½È¡Êµï¿½ï¿½
 	 * 
 	 * @param operation
 	 * @return
