@@ -33,7 +33,7 @@ public class SunSheldWarnTester implements Tester {
 	 * @throws InterruptedException
 	 */
 	public static void test1() throws IOException, InterruptedException{
-		SocketClient client = new SocketClient("127.0.0.1", 9888);
+		SocketClient client = new SocketClient("192.168.1.192", 9888);
 		Map<String, Object> map = BusinessModel.getInstance(OPERATION.intesv).
 				setSunNum("2").
 				setSunScore("100").
@@ -76,10 +76,26 @@ public class SunSheldWarnTester implements Tester {
 //		client.receiveSocket();
 	}
 	
+	/**
+	 * 误检类
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
+	public static void test4() throws IOException, InterruptedException{
+		SocketClient client = new SocketClient("127.0.0.1", 9888);
+		Map<String, Object> map = BusinessModel.getInstance(OPERATION.intesv)
+				.setSF_CarStyleCode("4682ECD6FF02460aB1DC0A5CA8D85BEE")
+				.getMap();
+		client.sendSocketData(map);
+		client.start();
+//		client.receiveSocket();
+	}
+	
 	public static void main(String[] args) throws IOException, InterruptedException {
-//		test1();
+		test1();
 //		test2();
-		test3();
+//		test3();
+//		test4();
 	}
 
 }

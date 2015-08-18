@@ -2,20 +2,22 @@ package com.intedio.test.mysql;
 
 import java.sql.Connection;
 
+
+
 /**
- * Êı¾İ¿âÁ¬½Ó³Ø
+ * æ•°æ®åº“è¿æ¥æ± 
  * 
  * @author Deamon
  */
 public interface ConnectionPool {
 
 	/**
-	 * Á¬½Ó³ØÄ¬ÈÏÁ¬½ÓÊıÁ¿
+	 * è¿æ¥æ± é»˜è®¤è¿æ¥æ•°é‡
 	 */
 	public static final int DEFAULTNUMOFCONNECTION = 10;
 
 	/**
-	 * ÒÔÄ¬ÈÏÊıÁ¿³õÊ¼»¯Á¬½Ó³Ø
+	 * ä»¥é»˜è®¤æ•°é‡åˆå§‹åŒ–è¿æ¥æ± 
 	 * 
 	 * @param url
 	 * @param user
@@ -25,34 +27,34 @@ public interface ConnectionPool {
 	public boolean init(String url, String user, String passwd);
 
 	/**
-	 * ³õÊ¼»¯Á¬½Ó³Ø
+	 * åˆå§‹åŒ–è¿æ¥æ± 
 	 * 
 	 * @param numOfConn
-	 *            Á¬½ÓÊıÁ¿
+	 *            è¿æ¥æ•°é‡
 	 * @param url
 	 * @param user
 	 * @param passwd
-	 * @return ³õÊ¼»¯ÊÇ·ñ³É¹¦
+	 * @return åˆå§‹åŒ–æ˜¯å¦æˆåŠŸ
 	 */
 	public boolean init(int numOfConn, String url, String user, String passwd);
 
 	/**
-	 * ´ÓÁ¬½Ó³ØÈ¡³öÁ¬½Ó
+	 * ä»è¿æ¥æ± å–å‡ºè¿æ¥
 	 * 
 	 * @return
 	 */
 	public Connection getConnectionFromPool();
 
 	/**
-	 * °ÑÁ¬½Ó»¹¸øÁ¬½Ó³Ø
+	 * æŠŠè¿æ¥è¿˜ç»™è¿æ¥æ± 
 	 * 
 	 * @param conn
-	 * @return Á¬½ÓÊÇ·ñÊôÓÚÁ¬½Ó³Ø
+	 * @return è¿æ¥æ˜¯å¦å±äºè¿æ¥æ± 
 	 */
 	public boolean ReturnConnection(Connection conn);
 
 	/**
-	 * ÊÍ·Å×ÊÔ´£¬¹Ø±ÕÁ¬½Ó³Ø
+	 * é‡Šæ”¾èµ„æºï¼Œå…³é—­è¿æ¥æ± 
 	 * 
 	 * @return
 	 */

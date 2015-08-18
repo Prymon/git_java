@@ -17,29 +17,28 @@ import org.apache.log4j.PropertyConfigurator;
 import org.dom4j.DocumentException;
 import org.junit.Test;
 
-import com.deamon.mysql.ConnectionPool;
 import com.deamon.util.XMLUtil;
 
 /**
- * Á¬½Ó³Ø½Ó¿ÚµÄmysqlÊµÏÖ mysqlÁ¬½Ó³Ø
- * »ùÓÚÍ¬²½µÄConcurrentHashMapµÄÊµÏÖ
- * getConnectionFromPool()ºÍReturnConnection(Connection)Ê¹ÓÃÁËÁ½¸ö²»Í¬µÄÍ¬²½Ëø
+ * è¿æ¥æ± æ¥å£çš„mysqlå®ç° mysqlè¿æ¥æ± 
+ * åŸºäºåŒæ­¥çš„ConcurrentHashMapçš„å®ç°
+ * getConnectionFromPool()å’ŒReturnConnection(Connection)ä½¿ç”¨äº†ä¸¤ä¸ªä¸åŒçš„åŒæ­¥é”
  * @author Deamon
  */
 public final class MysqlConnectionPool implements ConnectionPool{
 
 	Logger logger = Logger.getLogger(MysqlConnectionPool.class);
-	public static final String DBDRIVER = "com.mysql.jdbc.Driver"; // mysqlµÄÇı¶¯
-	public static final int ONRELEASETIMEINTERVAL = 2000; // ÊÍ·ÅÁ¬½Ó³ØµÈ´ıÁ¬½Ó¹Ø±ÕÊ±¼ä
-	private String url; // Á¬½Óurl
-	private String user; // Êı¾İ¿âÓÃ»§Ãû
-	private String passwd; // Êı¾İ¿âÃÜÂë
-	private int numOfConnection; // Á¬½Ó³ØÖĞÁ¬½ÓÊıÁ¿
-	private int maxNumOfConnection = 100; // Á¬½Ó³Ø×î´óÁ¬½ÓÊıÁ¿
-	private int maxBlockedTime = 20000; // »ñÈ¡Á¬½Ó×î´óµÈ´ıÊ±¼ä
-	private int singleWaitSec = 200; // »ñÈ¡Á¬½Óµ¥´ÎµÈ´ıÊ±¼ä
+	public static final String DBDRIVER = "com.mysql.jdbc.Driver"; // mysqlçš„é©±åŠ¨
+	public static final int ONRELEASETIMEINTERVAL = 2000; // é‡Šæ”¾è¿æ¥æ± ç­‰å¾…è¿æ¥å…³é—­æ—¶é—´
+	private String url; // è¿æ¥url
+	private String user; // æ•°æ®åº“ç”¨æˆ·å
+	private String passwd; // æ•°æ®åº“å¯†ç 
+	private int numOfConnection; // è¿æ¥æ± ä¸­è¿æ¥æ•°é‡
+	private int maxNumOfConnection = 100; // è¿æ¥æ± æœ€å¤§è¿æ¥æ•°é‡
+	private int maxBlockedTime = 20000; // è·å–è¿æ¥æœ€å¤§ç­‰å¾…æ—¶é—´
+	private int singleWaitSec = 200; // è·å–è¿æ¥å•æ¬¡ç­‰å¾…æ—¶é—´
 
-	private Map<Connection, Integer> connMap; // <Á¬½Ó,Á¬½Ó×´Ì¬>¡£-1ÎªÒì³£×´Ì¬¡¢0ÎªÒÑÁ¬½ÓÎ´Ê¹ÓÃ¡¢1ÎªÒÑÁ¬½ÓÕıÊ¹ÓÃ
+	private Map<Connection, Integer> connMap; // <è¿æ¥,è¿æ¥çŠ¶æ€>ã€‚-1ä¸ºå¼‚å¸¸çŠ¶æ€ã€0ä¸ºå·²è¿æ¥æœªä½¿ç”¨ã€1ä¸ºå·²è¿æ¥æ­£ä½¿ç”¨
 
 	public MysqlConnectionPool() {
 	}
@@ -51,7 +50,7 @@ public final class MysqlConnectionPool implements ConnectionPool{
 
 	@Override
 	public boolean init(int numOfConn, String url, String user, String passwd) {
-		if (null != connMap) // ÖØ¸´³õÊ¼»¯ÁË
+		if (null != connMap) // é‡å¤åˆå§‹åŒ–äº†
 			return false;
 		this.numOfConnection = numOfConn < maxNumOfConnection ? numOfConn
 				: maxNumOfConnection;
@@ -68,7 +67,7 @@ public final class MysqlConnectionPool implements ConnectionPool{
 		}
 		logger.info("start query max num of connection");
 		try {
-			// ĞŞÕıÊı¾İ¿â×î´óÁ¬½ÓÊı
+			// ä¿®æ­£æ•°æ®åº“æœ€å¤§è¿æ¥æ•°
 			int maxNumOfConnection = DriverManager
 					.getConnection(url, user, passwd).getMetaData()
 					.getMaxConnections();
@@ -76,9 +75,9 @@ public final class MysqlConnectionPool implements ConnectionPool{
 					&& maxNumOfConnection < this.maxNumOfConnection)
 				this.maxNumOfConnection = maxNumOfConnection;
 			System.out.println("max num correct scuess");
-			// ³õÊ¼»¯Á¬½Ó³Ø
-			//´´½¨Ò»¸öÍ¬²½µÄConcurrentHashMap
-//			connMap = Collections.synchronizedMap(new HashMap<Connection, Integer>());	//·½°¸1
+			// åˆå§‹åŒ–è¿æ¥æ± 
+			//åˆ›å»ºä¸€ä¸ªåŒæ­¥çš„ConcurrentHashMap
+//			connMap = Collections.synchronizedMap(new HashMap<Connection, Integer>());	//æ–¹æ¡ˆ1
 			connMap = new ConcurrentHashMap<Connection, Integer>();
 			for (int i = 0; i < numOfConnection; i++) {
 				Connection conn = DriverManager
@@ -132,13 +131,13 @@ public final class MysqlConnectionPool implements ConnectionPool{
 		if (connMap == null)
 			return false;
 		for (Entry<Connection, Integer> connEntry : connMap.entrySet()) {
-			if (connEntry.getValue() == 1) // Á¬½Ó»¹ÔÚÕ¼ÓÃ£¬µÈ´ı2s
+			if (connEntry.getValue() == 1) // è¿æ¥è¿˜åœ¨å ç”¨ï¼Œç­‰å¾…2s
 				waitMiles(ONRELEASETIMEINTERVAL);
 			try {
 				connEntry.getKey().close();
 				// connMap.remove(connEntry.getKey());
 			} catch (SQLException e) {
-				logger.error(" ¹Ø±ÕÊı¾İ¿âÁ¬½Ó³ö´í£º " + e.getMessage());
+				logger.error(" å…³é—­æ•°æ®åº“è¿æ¥å‡ºé”™ï¼š " + e.getMessage());
 				return false;
 			}
 		}
@@ -159,7 +158,7 @@ public final class MysqlConnectionPool implements ConnectionPool{
 	}
 
 	/**
-	 * ÉèÖÃ»ñÈ¡Á¬½Ó×î´óµÈ´ıÊ±¼ä£¨ms£©,ÉèÖÃÎª-1ÔòÎªÎŞÏŞÖÆ
+	 * è®¾ç½®è·å–è¿æ¥æœ€å¤§ç­‰å¾…æ—¶é—´ï¼ˆmsï¼‰,è®¾ç½®ä¸º-1åˆ™ä¸ºæ— é™åˆ¶
 	 * 
 	 * @param maxBlockedTime
 	 */
@@ -172,7 +171,7 @@ public final class MysqlConnectionPool implements ConnectionPool{
 	}
 
 	/**
-	 * ÉèÖÃ»ñÈ¡Á¬½ÓÊ±£¬µ¥´ÎµÈ´ıÊ±¼ä£¨ms£© ·¶Î§[10,10000],²ÎÊıÒç³öÔò±£³Ö²»±ä
+	 * è®¾ç½®è·å–è¿æ¥æ—¶ï¼Œå•æ¬¡ç­‰å¾…æ—¶é—´ï¼ˆmsï¼‰ èŒƒå›´[10,10000],å‚æ•°æº¢å‡ºåˆ™ä¿æŒä¸å˜
 	 * 
 	 * @param singleWaitSec
 	 */
@@ -191,7 +190,7 @@ public final class MysqlConnectionPool implements ConnectionPool{
 	}
 
 	/**
-	 * »ñµÃ¿ÕÏĞµÄÁ¬½Ó¡£ÈôÎŞ·µ»Ønull
+	 * è·å¾—ç©ºé—²çš„è¿æ¥ã€‚è‹¥æ— è¿”å›null
 	 * 
 	 * @return
 	 */
@@ -231,9 +230,9 @@ public final class MysqlConnectionPool implements ConnectionPool{
 					}
 					Connection conn =pool.getConnectionFromPool();
 					if (null == conn) {
-						System.out.println("µÃ²»µ½Á¬½Ó");
+						System.out.println("å¾—ä¸åˆ°è¿æ¥");
 					} else {
-						System.out.println("µÃµ½Á¬½Ó");
+						System.out.println("å¾—åˆ°è¿æ¥");
 					}
 //					waitMiles(2000);
 					System.out.println("return"+pool.ReturnConnection(conn));
@@ -246,9 +245,9 @@ public final class MysqlConnectionPool implements ConnectionPool{
 			e.printStackTrace();
 		}
 		
-		System.out.println("³¢ÊÔÊÍ·Å");
+		System.out.println("å°è¯•é‡Šæ”¾");
 		if (pool.releaseConnectionPool()) {
-			System.out.println("ÊÍ·ÅÍê³É");
+			System.out.println("é‡Šæ”¾å®Œæˆ");
 		}
 		System.out.println(pool.init(5, url, user, password)?"init scuess":"failed");
 
@@ -266,7 +265,7 @@ public final class MysqlConnectionPool implements ConnectionPool{
 		conn.close();
 	}
 	
-	//²âÊÔconnectionµÄ¹Ø±Õ£¬ºÍpoolµÄ¹Ø±Õ¶ÔÓÚ×ÊÔ´µÄÊÍ·Å
+	//æµ‹è¯•connectionçš„å…³é—­ï¼Œå’Œpoolçš„å…³é—­å¯¹äºèµ„æºçš„é‡Šæ”¾
 	@Test
 	public void test2() throws DocumentException, SQLException{
 		PropertyConfigurator.configure("conf/log4j.properties");
@@ -289,8 +288,8 @@ public final class MysqlConnectionPool implements ConnectionPool{
 		
 	}
 	/**
-	 * ¶¯Ì¬´úÀíHandlerÄÚ²¿Àà
-	 * ´¦ÀíconnectionµÄclose()ÇëÇó 
+	 * åŠ¨æ€ä»£ç†Handlerå†…éƒ¨ç±»
+	 * å¤„ç†connectionçš„close()è¯·æ±‚ 
 	 * @author Deamon
 	 */
 	class ProxyConn implements InvocationHandler{
