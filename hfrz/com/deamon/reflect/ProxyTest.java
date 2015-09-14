@@ -14,7 +14,7 @@ public class ProxyTest {
 }
 
 /**
- * 欲代理接口
+ * 锟斤拷锟斤拷锟接匡拷
  * @author Deamon
  */
 interface Foo {
@@ -22,7 +22,7 @@ interface Foo {
 }
 
 /**
- * 接口实现类
+ * 锟接匡拷实锟斤拷锟斤拷
  * @author Deamon
  */
 class Implement implements Foo {
@@ -34,7 +34,7 @@ class Implement implements Foo {
 }
 
 /**
- * InvocationHandler 是代理实例的调用处理程序 实现的接口。 
+ * InvocationHandler 锟角达拷锟斤拷实锟斤拷牡锟斤拷么锟斤拷锟斤拷锟斤拷 实锟街的接口★拷 
  * @author Deamon
  */
 class LogProxy implements InvocationHandler {
@@ -44,6 +44,7 @@ class LogProxy implements InvocationHandler {
 		obj = object;
 	}
 
+	@Override
 	public Object invoke(Object proxy, Method method, Object[] args)
 			throws Throwable {
 		String methodName = method.getName();

@@ -52,6 +52,7 @@ class writeThr extends Thread{
 	private static int interval = 50;
 	private static String sql1 = "insert into table1 value(";
 	private static String sql2 = ");";
+	@Override
 	public void run(){
 		Connection conn = pool.getConnectionFromPool();
 		try {

@@ -1,18 +1,8 @@
 package com.deamon.mybatis.test;
 
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.Reader;
-import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -38,11 +28,11 @@ public class Demo {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		SqlSession session = sqlSessionFactory.openSession();
 
-		/* µÃµ½Ò»¸ö½á¹û */
+		/* ï¿½Ãµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ */
 		UserDao mapper = session.getMapper(UserDao.class);
 		System.out.println(mapper.getUserById("admin").getGender());
 		
-		/* µÃµ½½á¹û¼¯ºÏ */
+		/* ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ */
 		List<User> userList = mapper.getAllUser();
 		for(User temp : userList){
 			System.out.println(temp.getId()+" "+temp.getName()+"  "+temp.getGender());

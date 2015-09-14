@@ -24,6 +24,7 @@ public class MainFrame extends JFrame {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					MainFrame frame = new MainFrame();
@@ -84,6 +85,7 @@ public class MainFrame extends JFrame {
 
 		JButton btnNewButton = new JButton("Submit");
 		btnNewButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
@@ -92,6 +94,7 @@ public class MainFrame extends JFrame {
 
 		JButton btnNewButton_1 = new JButton("use");
 		btnNewButton_1.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 			}
 		});

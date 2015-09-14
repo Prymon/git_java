@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="hfrz"/>
 	<classpathentry kind="src" path="business"/>
 	<classpathentry kind="src" path="mybatis"/>
+	<classpathentry kind="src" path="utils"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.16.jar"/>
 	<classpathentry kind="lib" path="lib/dom4j-1.6.1-sources.jar"/>

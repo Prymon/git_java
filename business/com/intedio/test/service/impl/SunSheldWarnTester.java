@@ -3,8 +3,6 @@ package com.intedio.test.service.impl;
 import java.io.IOException;
 import java.util.Map;
 
-import org.junit.Test;
-
 import com.intedio.test.pojo.BusinessModel;
 import com.intedio.test.service.Tester;
 import com.intedio.test.util.OPERATION;
@@ -34,10 +32,11 @@ public class SunSheldWarnTester implements Tester {
 	 */
 	public static void test1() throws IOException, InterruptedException{
 		SocketClient client = new SocketClient("192.168.1.192", 9888);
-		Map<String, Object> map = BusinessModel.getInstance(OPERATION.intesv).
+		BusinessModel.getInstance(OPERATION.intesv).
 				setSunNum("2").
 				setSunScore("100").
-				setSnapShotTime(System.currentTimeMillis()+"").getMap();
+				setSnapShotTime(System.currentTimeMillis()+"");
+		Map<String, Object> map = BusinessModel.getMap();
 		client.sendSocketData(map);
 		client.start();
 //		client.receiveSocket();
@@ -51,10 +50,11 @@ public class SunSheldWarnTester implements Tester {
 	 */
 	public static void test2() throws IOException, InterruptedException{
 		SocketClient client = new SocketClient("127.0.0.1", 9888);
-		Map<String, Object> map = BusinessModel.getInstance(OPERATION.intesv).
+		BusinessModel.getInstance(OPERATION.intesv).
 				setCarPlateNumber("鄂s011123").setCarPlateNumber2("鄂s011123").
 				setSF_CarFamily("-13").
-				setSnapShotTime(System.currentTimeMillis()+"").getMap();
+				setSnapShotTime(System.currentTimeMillis()+"");
+		Map<String, Object> map = BusinessModel.getMap();
 		client.sendSocketData(map);
 		client.start();
 //		client.receiveSocket();
@@ -67,10 +67,11 @@ public class SunSheldWarnTester implements Tester {
 	 */
 	public static void test3() throws IOException, InterruptedException{
 		SocketClient client = new SocketClient("127.0.0.1", 9888);
-		Map<String, Object> map = BusinessModel.getInstance(OPERATION.intesv).
+		BusinessModel.getInstance(OPERATION.intesv).
 				setSF_CarFamily("-90").setSF_CarBrand("10").
 				setCarPlateNumber("蒙G14984556").setCarPlateNumber2("蒙G14984556").
-				setSnapShotTime(System.currentTimeMillis()+"").getMap();
+				setSnapShotTime(System.currentTimeMillis()+"");
+		Map<String, Object> map = BusinessModel.getMap();
 		client.sendSocketData(map);
 		client.start();
 //		client.receiveSocket();
@@ -83,8 +84,9 @@ public class SunSheldWarnTester implements Tester {
 	 */
 	public static void test4() throws IOException, InterruptedException{
 		SocketClient client = new SocketClient("127.0.0.1", 9888);
-		Map<String, Object> map = BusinessModel.getInstance(OPERATION.intesv)
-				.setSF_CarStyleCode("4682ECD6FF02460aB1DC0A5CA8D85BEE")
+		BusinessModel.getInstance(OPERATION.intesv)
+				.setSF_CarStyleCode("4682ECD6FF02460aB1DC0A5CA8D85BEE");
+		Map<String, Object> map = BusinessModel
 				.getMap();
 		client.sendSocketData(map);
 		client.start();

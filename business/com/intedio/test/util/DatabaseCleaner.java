@@ -1,11 +1,11 @@
 package com.intedio.test.util;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.intedio.test.mysql.ConnectionPool;
 import com.intedio.test.mysql.MysqlConnectionPool;
-import com.mysql.jdbc.Statement;
 
 /**
  * 可以清空数据表，用作测试
@@ -16,19 +16,31 @@ public class DatabaseCleaner {
 
 	private static ConnectionPool pool;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		Init();
-		clean();
+		select();
 	}
 	
 	private static void Init() {
-		String url = "jdbc:mysql://192.168.1.192:3306/test?characterEncoding=utf-8"; // 连接url
-		String user = "hfrzmysql"; // 数据库用户名
-		String passwd = "123456"; // 数据库密码
+		String url = "jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf-8"; // 连接url
+		String user = "root"; // 数据库用户名
+		String passwd = "root"; // 数据库密码
 		pool = new MysqlConnectionPool();
 		pool.init(5, url, user, passwd);
 	}
 
+	private static void select() throws SQLException{
+		String sql1 = "select carplate from oneplatemulticars group by CarPlate having count(distinct SF_CarColorCode,SF_CarKindCode)>1";
+//		sql1 = "select * from oneplatemulticars";
+		Connection conn = pool.getConnectionFromPool();
+		java.sql.Statement Statement = conn.createStatement();
+		ResultSet result = Statement.executeQuery(sql1);
+		while(result.next()){
+			System.out.println(result.getString("carplate"));
+		}
+		
+	}
+	
 	private static void clean() {
 		try {
 			String sql1 = "truncate table vidtaskmap;";

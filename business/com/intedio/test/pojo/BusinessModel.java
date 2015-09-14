@@ -2,8 +2,6 @@ package com.intedio.test.pojo;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
-
 import com.intedio.test.util.OPERATION;
 
 public class BusinessModel {

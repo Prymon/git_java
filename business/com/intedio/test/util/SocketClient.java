@@ -9,7 +9,6 @@ import java.util.Map;
 
 import net.sf.json.JSONObject;
 
-import com.intedio.test.pojo.BusinessModel;
 import com.intedio.test.protocol.BusinessServicePacket;
 
 /**
@@ -32,8 +31,8 @@ public class SocketClient extends Thread {
 	}
 
 	public SocketClient(String ip, int port) {
-		this.PORT = port;
-		this.IP = ip;
+		SocketClient.PORT = port;
+		SocketClient.IP = ip;
 	}
 
 	/**
@@ -64,7 +63,7 @@ public class SocketClient extends Thread {
 	}
 	
 	public void receiveSocket() throws IOException{
-		ServerSocket serverSocket = new ServerSocket(this.PORT);
+		ServerSocket serverSocket = new ServerSocket(SocketClient.PORT);
 		Socket receiveSocket = serverSocket.accept();
 		DataInputStream dis = new DataInputStream(receiveSocket.getInputStream());
 		BusinessServicePacket bsp = new BusinessServicePacket();
