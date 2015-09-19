@@ -5,8 +5,8 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 /**
- * ±àĞ´Ò»¸öÔÚ1£¬2£¬¡­£¬9£¨Ë³Ğò²»ÄÜ±ä£©Êı×ÖÖ®¼ä²åÈë+»ò-»òÊ²Ã´¶¼²»²åÈë£¬Ê¹µÃ¼ÆËã½á¹û×ÜÊÇ100µÄ³ÌĞò£¬²¢Êä³öËùÓĞµÄ¿ÉÄÜĞÔ¡£
- * ÀıÈç£º1 + 2 + 34 ¨C 5 + 67 ¨C 8 + 9 = 100¡£
+ * ç¼–å†™ä¸€ä¸ªåœ¨1ï¼Œ2ï¼Œâ€¦ï¼Œ9ï¼ˆé¡ºåºä¸èƒ½å˜ï¼‰æ•°å­—ä¹‹é—´æ’å…¥+æˆ–-æˆ–ä»€ä¹ˆéƒ½ä¸æ’å…¥ï¼Œä½¿å¾—è®¡ç®—ç»“æœæ€»æ˜¯100çš„ç¨‹åºï¼Œå¹¶è¾“å‡ºæ‰€æœ‰çš„å¯èƒ½æ€§ã€‚
+ * ä¾‹å¦‚ï¼š1 + 2 + 34 + 5 + 67 + 8 + 9 = 100ã€‚
  * @author Deamon
  */
 public class Quest5 {
@@ -50,7 +50,7 @@ public class Quest5 {
 	}
 	
 	/**
-	 * Ö´ĞĞ½Å±¾demo
+	 * æ‰§è¡Œè„šæœ¬demo
 	 * @throws ScriptException
 	 */
     public static void test2() throws ScriptException {  
@@ -58,7 +58,7 @@ public class Quest5 {
         ScriptEngineManager manager = new ScriptEngineManager();  
         ScriptEngine engine = manager.getEngineByName("js");  
         Object result = engine.eval(str);  
-        System.out.println("½á¹ûÀàĞÍ:" + result.getClass().getName() + ",¼ÆËã½á¹û:" + result);  
+        System.out.println("ç»“æœç±»å‹:" + result.getClass().getName() + ",è®¡ç®—ç»“æœ:" + result);  
     }  
       
     public static void main(String[] args) throws ScriptException {  

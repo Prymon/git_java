@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//basic/design_pattern/Singleton.java=UTF-8
+encoding//basic/five_questions/Quest5.java=UTF-8
 encoding//business/com/intedio/test/mysql/ConnectionPool.java=UTF-8
 encoding//business/com/intedio/test/service/impl/SunSheldWarnTester.java=UTF-8
 encoding//conf/dbcpconfig.properties=UTF-8
