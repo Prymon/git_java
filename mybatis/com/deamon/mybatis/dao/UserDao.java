@@ -5,7 +5,7 @@ import java.util.List;
 import com.deamon.mybatis.entity.User;
 
 /**
- * 提供对user的sql操作
+ * 鎻愪緵瀵箄ser鐨剆ql鎿嶄綔
  * 
  * @author dimen
  */
@@ -14,4 +14,6 @@ public interface UserDao {
 	public User getUserById(String id);
 
 	public List<User> getAllUser();
+	
+//	public void insertUser(User user);
 }

@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.deamon.mybatis.dao.UserDao">
-	<select id="getUserById" resultType="com.deamon.mybatis.entity.User" parameterType="java.lang.String">
+	<select id="getUserById" resultType="com.deamon.mybatis.entity.User"
+		parameterType="java.lang.Integer">
 		select * from user where id = #{id}
 	</select>
-	
+
 	<select id="getAllUser" resultType="com.deamon.mybatis.entity.User">
 		select * from user
 	</select>
+
+	<insert id="insertUser" parameterType="com.deamon.mybatis.entity.User">
+		insert into	user(id,name,gender) value(#{id},#{name},#{gender})
+	</insert>
+
+	<insert id="insertUserReturnId" parameterType="com.deamon.mybatis.entity.User">
+		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
+			select
+			LAST_INSERT_ID()
+		</selectKey>
+		insert into user(name,gender) value(#{name},#{gender})
+	</insert>
+
+	<insert id="insertUserByUuid" parameterType="com.deamon.mybatis.entity.User">
+		<selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+			select UUID()
+		</selectKey>
+		insert into user(id,name,gender) value(#{id},#{name},#{gender})
+	</insert>
 	
+	<delete id="deleteUserById" parameterType="com.deamon.mybatis.entity.User">
+		delete from user where id = #{id}	
+	</delete>
 </mapper>

@@ -371,3 +371,489 @@ DEBUG - <==      Total: 1
 DEBUG - ==>  Preparing: select * from user 
 DEBUG - ==> Parameters: 
 DEBUG - <==      Total: 3
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1683210167.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6453bfb7]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: admin(String)
+DEBUG - <==      Total: 0
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1683210167.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6453bfb7]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: admin(String)
+DEBUG - <==      Total: 0
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1683210167.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6453bfb7]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(String)
+DEBUG - <==      Total: 1
+DEBUG - ==>  Preparing: select * from user 
+DEBUG - ==> Parameters: 
+DEBUG - <==      Total: 1
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1683210167.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6453bfb7]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(String)
+DEBUG - <==      Total: 1
+DEBUG - ==>  Preparing: select * from user 
+DEBUG - ==> Parameters: 
+DEBUG - <==      Total: 1
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 399646848.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@17d22080]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(String)
+DEBUG - <==      Total: 1
+DEBUG - ==>  Preparing: select * from user 
+DEBUG - ==> Parameters: 
+DEBUG - <==      Total: 1
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 682588046.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@28af778e]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(String)
+DEBUG - <==      Total: 1
+DEBUG - ==>  Preparing: select * from user 
+DEBUG - ==> Parameters: 
+DEBUG - <==      Total: 2
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 824256643.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@31212883]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1410179500.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@540da1ac]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(String)
+DEBUG - <==      Total: 1
+DEBUG - ==>  Preparing: select * from user 
+DEBUG - ==> Parameters: 
+DEBUG - <==      Total: 2
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1410179500.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@540da1ac]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(String)
+DEBUG - <==      Total: 1
+DEBUG - ==>  Preparing: select * from user 
+DEBUG - ==> Parameters: 
+DEBUG - <==      Total: 2
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1019678929.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@3cc710d1]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1019678929.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@3cc710d1]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 676105376.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@284c8ca0]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(String)
+DEBUG - <==      Total: 1
+DEBUG - ==>  Preparing: select * from user 
+DEBUG - ==> Parameters: 
+DEBUG - <==      Total: 2
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 824256643.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@31212883]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(String)
+DEBUG - <==      Total: 1
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1257328208.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@4af14e50]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(String)
+DEBUG - <==      Total: 1
+DEBUG - ==>  Preparing: select * from user 
+DEBUG - ==> Parameters: 
+DEBUG - <==      Total: 2
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1465725042.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@575d3072]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(String)
+DEBUG - <==      Total: 1
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1862556322.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6f045aa2]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(String)
+DEBUG - <==      Total: 1
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1082732879.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@4089314f]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1082732879.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@4089314f]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1862556322.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6f045aa2]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1082732879.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@4089314f]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 69317479.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@421b367]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 422003518.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - Returned connection 422003518 to pool.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1700653744.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@655deab0]
+DEBUG - ==>  Preparing: insert into user(id,name,gender) value(?,?,?) 
+DEBUG - ==> Parameters: null, null, null
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1699102063.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@65463d6f]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@65463d6f]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@65463d6f]
+DEBUG - Returned connection 1699102063 to pool.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1964749139.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@751bb153]
+DEBUG - ==>  Preparing: insert into user(id,name,gender) value(?,?,?) 
+DEBUG - ==> Parameters: null, null, null
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1718318682.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@666b765a]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@666b765a]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@666b765a]
+DEBUG - Returned connection 1718318682 to pool.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1872128887.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6f966b77]
+DEBUG - ==>  Preparing: insert into user(id,name,gender) value(?,?,?) 
+DEBUG - ==> Parameters: null, null, null
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 422003518.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - Returned connection 422003518 to pool.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1872128887.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6f966b77]
+DEBUG - ==>  Preparing: insert into user(id,name,gender) value(?,?,?) 
+DEBUG - ==> Parameters: null, Deamon(String), female(String)
+DEBUG - <==    Updates: 1
+DEBUG - Rolling back JDBC Connection [com.mysql.jdbc.JDBC4Connection@6f966b77]
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6f966b77]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@6f966b77]
+DEBUG - Returned connection 1872128887 to pool.
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 743791359.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@2c555aff]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@2c555aff]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@2c555aff]
+DEBUG - Returned connection 743791359 to pool.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 2027617485.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@78dafccd]
+DEBUG - ==>  Preparing: insert into user(id,name,gender) value(?,?,?) 
+DEBUG - ==> Parameters: null, Deamon(String), female(String)
+DEBUG - <==    Updates: 1
+DEBUG - Rolling back JDBC Connection [com.mysql.jdbc.JDBC4Connection@78dafccd]
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@78dafccd]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@78dafccd]
+DEBUG - Returned connection 2027617485 to pool.
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 743791359.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@2c555aff]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@2c555aff]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@2c555aff]
+DEBUG - Returned connection 743791359 to pool.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 2027617485.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@78dafccd]
+DEBUG - ==>  Preparing: insert into user(id,name,gender) value(?,?,?) 
+DEBUG - ==> Parameters: null, Deamon(String), female(String)
+DEBUG - <==    Updates: 1
+DEBUG - Rolling back JDBC Connection [com.mysql.jdbc.JDBC4Connection@78dafccd]
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@78dafccd]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@78dafccd]
+DEBUG - Returned connection 2027617485 to pool.
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 422003518.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - Returned connection 422003518 to pool.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1964749139.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@751bb153]
+DEBUG - ==>  Preparing: insert into user(id,name,gender) value(?,?,?) 
+DEBUG - ==> Parameters: null, Deamon(String), female(String)
+DEBUG - <==    Updates: 1
+DEBUG - Rolling back JDBC Connection [com.mysql.jdbc.JDBC4Connection@751bb153]
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@751bb153]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@751bb153]
+DEBUG - Returned connection 1964749139 to pool.
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 474767460.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1c4c6064]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1c4c6064]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@1c4c6064]
+DEBUG - Returned connection 474767460 to pool.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 37282616.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@238e338]
+DEBUG - ==>  Preparing: insert into user(id,name,gender) value(?,?,?) 
+DEBUG - ==> Parameters: null, Deamon(String), female(String)
+DEBUG - <==    Updates: 1
+DEBUG - Rolling back JDBC Connection [com.mysql.jdbc.JDBC4Connection@238e338]
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@238e338]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@238e338]
+DEBUG - Returned connection 37282616 to pool.
+DEBUG - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 422003518.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - ==>  Preparing: select * from user where id = ? 
+DEBUG - ==> Parameters: 123(Integer)
+DEBUG - <==      Total: 1
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@1927433e]
+DEBUG - Returned connection 422003518 to pool.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - PooledDataSource forcefully closed/removed all connections.
+DEBUG - Opening JDBC Connection
+DEBUG - Created connection 1700653744.
+DEBUG - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@655deab0]
+DEBUG - ==>  Preparing: insert into user(id,name,gender) value(?,?,?) 
+DEBUG - ==> Parameters: null, Deamon(String), female(String)
+DEBUG - <==    Updates: 1
+DEBUG - Rolling back JDBC Connection [com.mysql.jdbc.JDBC4Connection@655deab0]
+DEBUG - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@655deab0]
+DEBUG - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@655deab0]
+DEBUG - Returned connection 1700653744 to pool.

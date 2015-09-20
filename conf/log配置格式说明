@@ -1,60 +1,60 @@
-Log4JÅäÖÃÎÄ¼şµÄ»ù±¾¸ñÊ½ÈçÏÂ£º 
+Log4Jé…ç½®æ–‡ä»¶çš„åŸºæœ¬æ ¼å¼å¦‚ä¸‹ï¼š 
 ##########################################################
-#ÅäÖÃ¸ùLogger
-log4j.rootLogger = [ level ],appenderName1,appenderName2,¡£¡£¡£
+#é…ç½®æ ¹Logger
+log4j.rootLogger = [ level ],appenderName1,appenderName2,ã€‚ã€‚ã€‚
 
-#ÅäÖÃÈÕÖ¾ĞÅÏ¢Êä³öÄ¿µÄµØAppender
+#é…ç½®æ—¥å¿—ä¿¡æ¯è¾“å‡ºç›®çš„åœ°Appender
 log4j.appender.appenderName  =  org.apache.log4j.ConsoleAppender 
-¡¡¡¡log4j.appender.appenderName.option1  =  value1  
-¡¡¡¡log4j.appender.appenderName.optionN  =  valueN 
+ã€€ã€€log4j.appender.appenderName.option1  =  value1  
+ã€€ã€€log4j.appender.appenderName.optionN  =  valueN 
 
-#ÅäÖÃÈÕÖ¾ĞÅÏ¢µÄ¸ñÊ½£¨²¼¾Ö£©
+#é…ç½®æ—¥å¿—ä¿¡æ¯çš„æ ¼å¼ï¼ˆå¸ƒå±€ï¼‰
 log4j.appender.appenderName.layout =  org.apache.log4j.SimpleLayout
-¡¡¡¡log4j.appender.appenderName.layout.option1  =  value1  
-¡¡¡¡log4j.appender.appenderName.layout.optionN  =  valueN  
+ã€€ã€€log4j.appender.appenderName.layout.option1  =  value1  
+ã€€ã€€log4j.appender.appenderName.layout.optionN  =  valueN  
 ##########################################################
-1.------[level] ÊÇÈÕÖ¾Êä³ö¼¶±ğ£¬¹²ÓĞ5¼¶£º
+1.------[level] æ˜¯æ—¥å¿—è¾“å‡ºçº§åˆ«ï¼Œå…±æœ‰5çº§ï¼š
 FATAL      0  
 ERROR      3  
 WARN       4  
 INFO       6  
 DEBUG      7  
 
-2.------¿ÉÑ¡µÄAppenderÖÖÀà:
-org.apache.log4j.ConsoleAppender£¨¿ØÖÆÌ¨£©£¬
-org.apache.log4j.FileAppender£¨ÎÄ¼ş£©£¬
-org.apache.log4j.DailyRollingFileAppender£¨Ã¿Ìì²úÉúÒ»¸öÈÕÖ¾ÎÄ¼ş£©£¬
-org.apache.log4j.RollingFileAppender£¨ÎÄ¼ş´óĞ¡µ½´ïÖ¸¶¨³ß´çµÄÊ±ºò²úÉúÒ»¸öĞÂµÄÎÄ¼ş£©£¬
-org.apache.log4j.WriterAppender£¨½«ÈÕÖ¾ĞÅÏ¢ÒÔÁ÷¸ñÊ½·¢ËÍµ½ÈÎÒâÖ¸¶¨µÄµØ·½£©
+2.------å¯é€‰çš„Appenderç§ç±»:
+org.apache.log4j.ConsoleAppenderï¼ˆæ§åˆ¶å°ï¼‰ï¼Œ
+org.apache.log4j.FileAppenderï¼ˆæ–‡ä»¶ï¼‰ï¼Œ
+org.apache.log4j.DailyRollingFileAppenderï¼ˆæ¯å¤©äº§ç”Ÿä¸€ä¸ªæ—¥å¿—æ–‡ä»¶ï¼‰ï¼Œ
+org.apache.log4j.RollingFileAppenderï¼ˆæ–‡ä»¶å¤§å°åˆ°è¾¾æŒ‡å®šå°ºå¯¸çš„æ—¶å€™äº§ç”Ÿä¸€ä¸ªæ–°çš„æ–‡ä»¶ï¼‰ï¼Œ
+org.apache.log4j.WriterAppenderï¼ˆå°†æ—¥å¿—ä¿¡æ¯ä»¥æµæ ¼å¼å‘é€åˆ°ä»»æ„æŒ‡å®šçš„åœ°æ–¹ï¼‰
 
-3.------Layout£ºÈÕÖ¾Êä³ö¸ñÊ½£¬Log4jÌá¹©µÄlayoutÓĞÒÔÏÂ¼¸ÖÖ£º
-org.apache.log4j.HTMLLayout£¨ÒÔHTML±í¸ñĞÎÊ½²¼¾Ö£©£¬
-org.apache.log4j.PatternLayout£¨¿ÉÒÔÁé»îµØÖ¸¶¨²¼¾ÖÄ£Ê½£©£¬
-org.apache.log4j.SimpleLayout£¨°üº¬ÈÕÖ¾ĞÅÏ¢µÄ¼¶±ğºÍĞÅÏ¢×Ö·û´®£©£¬
-org.apache.log4j.TTCCLayout£¨°üº¬ÈÕÖ¾²úÉúµÄÊ±¼ä¡¢Ïß³Ì¡¢Àà±ğµÈµÈĞÅÏ¢£©
+3.------Layoutï¼šæ—¥å¿—è¾“å‡ºæ ¼å¼ï¼ŒLog4jæä¾›çš„layoutæœ‰ä»¥ä¸‹å‡ ç§ï¼š
+org.apache.log4j.HTMLLayoutï¼ˆä»¥HTMLè¡¨æ ¼å½¢å¼å¸ƒå±€ï¼‰ï¼Œ
+org.apache.log4j.PatternLayoutï¼ˆå¯ä»¥çµæ´»åœ°æŒ‡å®šå¸ƒå±€æ¨¡å¼ï¼‰ï¼Œ
+org.apache.log4j.SimpleLayoutï¼ˆåŒ…å«æ—¥å¿—ä¿¡æ¯çš„çº§åˆ«å’Œä¿¡æ¯å­—ç¬¦ä¸²ï¼‰ï¼Œ
+org.apache.log4j.TTCCLayoutï¼ˆåŒ…å«æ—¥å¿—äº§ç”Ÿçš„æ—¶é—´ã€çº¿ç¨‹ã€ç±»åˆ«ç­‰ç­‰ä¿¡æ¯ï¼‰
 
-4.------Îª²»Í¬µÄ Appender ÉèÖÃÈÕÖ¾Êä³ö¼¶±ğ£º
-µ±µ÷ÊÔÏµÍ³Ê±£¬ÎÒÃÇÍùÍù×¢ÒâµÄÖ»ÊÇÒì³£¼¶±ğµÄÈÕÖ¾Êä³ö£¬µ«ÊÇÍ¨³£ËùÓĞ¼¶±ğµÄÊä³ö¶¼ÊÇ·ÅÔÚÒ»¸öÎÄ¼şÀïµÄ£¬Èç¹ûÈÕÖ¾Êä³öµÄ¼¶±ğÊÇBUG£¡£¿ÄÇ¾ÍÂıÂıÈ¥ÕÒ°É¡£
-ÕâÊ±ÎÒÃÇÒ²Ğí»áÏëÒªÊÇÄÜ°ÑÒì³£ĞÅÏ¢µ¥¶ÀÊä³öµ½Ò»¸öÎÄ¼şÀï¸Ã¶àºÃ°¡¡£
-µ±È»¿ÉÒÔ£¬Log4jÒÑ¾­Ìá¹©ÁËÕâÑùµÄ¹¦ÄÜ£¬ÎÒÃÇÖ»ĞèÒªÔÚÅäÖÃÖĞĞŞ¸ÄAppenderµÄThreshold ¾ÍÄÜÊµÏÖ
-±ÈÈçÏÂÃæµÄÀı×Ó£º
+4.------ä¸ºä¸åŒçš„ Appender è®¾ç½®æ—¥å¿—è¾“å‡ºçº§åˆ«ï¼š
+å½“è°ƒè¯•ç³»ç»Ÿæ—¶ï¼Œæˆ‘ä»¬å¾€å¾€æ³¨æ„çš„åªæ˜¯å¼‚å¸¸çº§åˆ«çš„æ—¥å¿—è¾“å‡ºï¼Œä½†æ˜¯é€šå¸¸æ‰€æœ‰çº§åˆ«çš„è¾“å‡ºéƒ½æ˜¯æ”¾åœ¨ä¸€ä¸ªæ–‡ä»¶é‡Œçš„ï¼Œå¦‚æœæ—¥å¿—è¾“å‡ºçš„çº§åˆ«æ˜¯BUGï¼ï¼Ÿé‚£å°±æ…¢æ…¢å»æ‰¾å§ã€‚
+è¿™æ—¶æˆ‘ä»¬ä¹Ÿè®¸ä¼šæƒ³è¦æ˜¯èƒ½æŠŠå¼‚å¸¸ä¿¡æ¯å•ç‹¬è¾“å‡ºåˆ°ä¸€ä¸ªæ–‡ä»¶é‡Œè¯¥å¤šå¥½å•Šã€‚
+å½“ç„¶å¯ä»¥ï¼ŒLog4jå·²ç»æä¾›äº†è¿™æ ·çš„åŠŸèƒ½ï¼Œæˆ‘ä»¬åªéœ€è¦åœ¨é…ç½®ä¸­ä¿®æ”¹Appenderçš„Threshold å°±èƒ½å®ç°
+æ¯”å¦‚ä¸‹é¢çš„ä¾‹å­ï¼š
 log4j.appender.errorapp = org.apache.log4j.ConsoleAppender
 #point configure. only output logs beyond error
 log4j.appender.errorapp.Threshold = ERROR
 log4j.appender.errorapp.layout = org.apache.log4j.SimpleLayout
 
-5.------´òÓ¡²ÎÊı: Log4J²ÉÓÃÀàËÆCÓïÑÔÖĞµÄprintfº¯ÊıµÄ´òÓ¡¸ñÊ½¸ñÊ½»¯ÈÕÖ¾ĞÅÏ¢£¬ÈçÏÂ:
- ¡¡  %m   Êä³ö´úÂëÖĞÖ¸¶¨µÄÏûÏ¢
-¡¡¡¡%p   Êä³öÓÅÏÈ¼¶£¬¼´DEBUG£¬INFO£¬WARN£¬ERROR£¬FATAL 
-¡¡¡¡%r   Êä³ö×ÔÓ¦ÓÃÆô¶¯µ½Êä³ö¸ÃlogĞÅÏ¢ºÄ·ÑµÄºÁÃëÊı 
-¡¡¡¡%c   Êä³öËùÊôµÄÀàÄ¿£¬Í¨³£¾ÍÊÇËùÔÚÀàµÄÈ«Ãû 
-¡¡¡¡%t   Êä³ö²úÉú¸ÃÈÕÖ¾ÊÂ¼şµÄÏß³ÌÃû 
-¡¡¡¡%n   Êä³öÒ»¸ö»Ø³µ»»ĞĞ·û£¬WindowsÆ½Ì¨Îª¡°/r/n¡±£¬UnixÆ½Ì¨Îª¡°/n¡± 
-¡¡¡¡%d   Êä³öÈÕÖ¾Ê±¼äµãµÄÈÕÆÚ»òÊ±¼ä£¬Ä¬ÈÏ¸ñÊ½ÎªISO8601£¬Ò²¿ÉÒÔÔÚÆäºóÖ¸¶¨¸ñÊ½£¬±ÈÈç£º%d{yyy MMM dd HH:mm:ss , SSS}£¬Êä³öÀàËÆ£º2002Äê10ÔÂ18ÈÕ  22 £º 10 £º 28 £¬ 921  
-¡¡¡¡%l   Êä³öÈÕÖ¾ÊÂ¼şµÄ·¢ÉúÎ»ÖÃ£¬°üÀ¨ÀàÄ¿Ãû¡¢·¢ÉúµÄÏß³Ì£¬ÒÔ¼°ÔÚ´úÂëÖĞµÄĞĞÊı¡£¾ÙÀı£ºTestlog4.main(TestLog4.java: 10 )  
-ÀıÈç£ºlog4j.appender.errorapp.layout = org.apache.log4j.PatternLayout
+5.------æ‰“å°å‚æ•°: Log4Jé‡‡ç”¨ç±»ä¼¼Cè¯­è¨€ä¸­çš„printfå‡½æ•°çš„æ‰“å°æ ¼å¼æ ¼å¼åŒ–æ—¥å¿—ä¿¡æ¯ï¼Œå¦‚ä¸‹:
+ ã€€  %m   è¾“å‡ºä»£ç ä¸­æŒ‡å®šçš„æ¶ˆæ¯
+ã€€ã€€%p   è¾“å‡ºä¼˜å…ˆçº§ï¼Œå³DEBUGï¼ŒINFOï¼ŒWARNï¼ŒERRORï¼ŒFATAL 
+ã€€ã€€%r   è¾“å‡ºè‡ªåº”ç”¨å¯åŠ¨åˆ°è¾“å‡ºè¯¥logä¿¡æ¯è€—è´¹çš„æ¯«ç§’æ•° 
+ã€€ã€€%c   è¾“å‡ºæ‰€å±çš„ç±»ç›®ï¼Œé€šå¸¸å°±æ˜¯æ‰€åœ¨ç±»çš„å…¨å 
+ã€€ã€€%t   è¾“å‡ºäº§ç”Ÿè¯¥æ—¥å¿—äº‹ä»¶çš„çº¿ç¨‹å 
+ã€€ã€€%n   è¾“å‡ºä¸€ä¸ªå›è½¦æ¢è¡Œç¬¦ï¼ŒWindowså¹³å°ä¸ºâ€œ/r/nâ€ï¼ŒUnixå¹³å°ä¸ºâ€œ/nâ€ 
+ã€€ã€€%d   è¾“å‡ºæ—¥å¿—æ—¶é—´ç‚¹çš„æ—¥æœŸæˆ–æ—¶é—´ï¼Œé»˜è®¤æ ¼å¼ä¸ºISO8601ï¼Œä¹Ÿå¯ä»¥åœ¨å…¶åæŒ‡å®šæ ¼å¼ï¼Œæ¯”å¦‚ï¼š%d{yyy MMM dd HH:mm:ss , SSS}ï¼Œè¾“å‡ºç±»ä¼¼ï¼š2002å¹´10æœˆ18æ—¥  22 ï¼š 10 ï¼š 28 ï¼Œ 921  
+ã€€ã€€%l   è¾“å‡ºæ—¥å¿—äº‹ä»¶çš„å‘ç”Ÿä½ç½®ï¼ŒåŒ…æ‹¬ç±»ç›®åã€å‘ç”Ÿçš„çº¿ç¨‹ï¼Œä»¥åŠåœ¨ä»£ç ä¸­çš„è¡Œæ•°ã€‚ä¸¾ä¾‹ï¼šTestlog4.main(TestLog4.java: 10 )  
+ä¾‹å¦‚ï¼šlog4j.appender.errorapp.layout = org.apache.log4j.PatternLayout
 log4j.appender.errorapp.layout.ConversionPattern = %-d{yyyy-MM-dd HH:mm:ss}  [ %t:%r ] - [ %p ]  %m%n
-Êä³ö½á¹ûÎª£º
+è¾“å‡ºç»“æœä¸ºï¼š
 2015-06-04 11:33:39  [ main:0 ] - [ ERROR ]  This is error message. 
 
 
