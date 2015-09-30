@@ -42,5 +42,6 @@
 	<classpathentry kind="lib" path="lib/commons-beanutils-1.9.2.jar"/>
 	<classpathentry kind="lib" path="lib/mybatis-3-3.2.8-src.zip"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="com.deamon.study.basic"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
